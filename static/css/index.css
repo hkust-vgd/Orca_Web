@@ -1,0 +1,31 @@
+:root {
+    --general-dataset-color: #ff7f00;
+    --marine-dataset-color: #004f6e;
+}
+
+.general-dataset-color {
+    color: var(--general-dataset-color);
+}
+
+.marine-dataset-color {
+    color: var(--marine-dataset-color);
+}
+
+.figure-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px 30px;
+    justify-content: center; /* Center the entire grid horizontally */
+}
+
+.figure-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.figure-item img {
+    width: 200px;
+    height: auto;
+    border: 1px solid #ccc;
+}

@@ -1,78 +1,565 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Orca | Coming Soon</title>
-  <style>
-    :root {
-      --primary-color: #005f73;
-      --secondary-color: #0a9396;
-      --bg-color: #e9ecef;
-      --text-color: #001219;
-    }
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="description"
+            content="MarineEval: Assessing the Marine Intelligence of Vision-Language Models"
+        />
+        <meta
+            name="keywords"
+            content="Computer Vision, Dataset, Marine Understanding, Object Detection, Image Grounding, Image Captioning"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>ORCA</title>
+        <link
+            rel="icon"
+            href="static/images/webpage_icon.png"
+            type="image/png"
+        />
+        <link rel="stylesheet" href="./static/css/template.css" />
+        <link rel="stylesheet" href="./static/css/index.css" />
+        <script
+            src="https://kit.fontawesome.com/adea1f1b6d.js"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <header class="paper-header">
+            <img
+                src="static/images/title_background.jpg"
+                alt="Header background image"
+            />
+            <div class="header">
+                <h1>
+                    ORCA: <u>O</u>bject <u>R</u>ecognition and
+                    <u>C</u>omprehension for <u>A</u>rchiving Marine Species
+                </h1>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+                <div class="authors">
+                    <a href="" target="_blank" rel="noopener noreferrer"
+                        >Yuk-Kwan Wong</a
+                    ><sup>1</sup>,
+                    <a href="" target="_blank" rel="noopener noreferrer"
+                        >Haizin Liang</a
+                    ><sup>1</sup>,
+                    <a href="" target="_blank" rel="noopener noreferrer"
+                        >Zeyu Ma</a
+                    ><sup>2</sup>,
+                    <a href="" target="_blank" rel="noopener noreferrer"
+                        >Yiwei Chen</a
+                    ><sup>1</sup>,
+                    <a href="" target="_blank" rel="noopener noreferrer"
+                        >Ziqiang Zheng</a
+                    ><sup>1*</sup>, <br />
+                    <a href="" target="_blank" rel="noopener noreferrer"
+                        >Rinaldi Gotama</a
+                    ><sup>3</sup>,
+                    <a href="" target="_blank" rel="noopener noreferrer"
+                        >Pascal Sebastian</a
+                    ><sup>3</sup>,
+                    <a href="" target="_blank" rel="noopener noreferrer"
+                        >Lauren D. Sparks</a
+                    ><sup>3</sup>,
+                    <a
+                        href="https://saikit.org/index.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Sai-Kit Yeung</a
+                    ><sup>1</sup>
+                </div>
 
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 1rem;
-    }
+                <div class="affiliations">
+                    <sup>1</sup>Hong Kong University of Science and Technology
 
-    h1 {
-      font-size: 2.2rem;
-      color: var(--primary-color);
-      margin-bottom: 0.75rem;
-    }
+                    <sup>2</sup>University of Electronic Science and Technology
+                    of China <br />
+                    <sup>3</sup>Indo Ocean Foundation
+                </div>
 
-    p {
-      font-size: 1.1rem;
-      color: var(--text-color);
-    }
+                <div class="conference">
+                    <!-- Conference name with bold short form -->
+                    <em
+                        >The IEEE/CVF Winter Conference on Applications of
+                        Computer Vision (<strong>WACV</strong>) 2026</em
+                    >
+                </div>
 
-    .logo {
-      font-size: 3rem;
-      font-weight: bold;
-      color: var(--secondary-color);
-      margin-bottom: 1rem;
-    }
+                <div class="corresponding-note">
+                    * Corresponding author:
+                    <a
+                        href="mailto:zhengziqiang1@gmail.com"
+                        style="color: #ffebc6"
+                        >zhengziqiang1@gmail.com</a
+                    >
+                </div>
 
-    footer {
-      position: absolute;
-      bottom: 1rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
+                <div class="link-buttons">
+                    <a
+                        href="static/papers/orca_main_paper.pdf"
+                        class="link-button"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                    >
+                        <i class="fas fa-file-pdf icon"></i>
+                        <span>Paper</span>
+                    </a>
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.8rem;
-      }
-      .logo {
-        font-size: 2.5rem;
-      }
-      p {
-        font-size: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="logo">Orca </div>
-  <h1>We're not ready yet.</h1>
-  <p>Our site is currently under construction. Please check back soon!</p>
-  <footer>&copy; 2025 Orca. All rights reserved.</footer>
-</body>
+                    <a
+                        href="static/papers/orca_supp.pdf"
+                        class="link-button"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                    >
+                        <i class="fas fa-file-pdf icon"></i>
+                        <span>Supplementary</span>
+                    </a>
+
+                    <a
+                        href="https://arxiv.org/abs/2512.21150"
+                        class="link-button"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="static/icons/arxiv-logomark-small.svg"
+                            class="icon"
+                            alt="arXiv logo"
+                        />
+                        <span>arXiv</span>
+                    </a>
+
+                    <a
+                        href=""
+                        class="link-button"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="static/icons/hf-logo.svg"
+                            class="icon"
+                            alt="Hugging Face logo"
+                        />
+                        <span>Dataset</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="content">
+            <section>
+                <h2>Overview</h2>
+                <figure>
+                    <img
+                        src="static/images/orca_overview.svg"
+                        alt="Orca Overview"
+                    />
+                    <figcaption>
+                        Figure 1. <span class="toolname">ORCA</span> overview.
+                    </figcaption>
+                </figure>
+                <p>
+                    <span class="toolname">ORCA</span> aims to enhance marine
+                    visual understanding for machine learning models. It aligns
+                    domain-specific challenges with core computer vision tasks,
+                    namely object detection, image grounding, and image
+                    captioning. The dataset includes
+                    <strong>14,647</strong> images covering
+                    <strong>478</strong> marine species (<strong>670</strong>
+                    common names), annotated with
+                    <strong>42,217</strong> bounding boxes and
+                    <strong>22,321</strong> expert-verified positive captions,
+                    establishing a comprehensive benchmark for advancing
+                    computer vision in marine research.
+                </p>
+            </section>
+
+            <section>
+                <h2>Statistic</h2>
+
+                <div class="table-wrapper">
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>#. of Images</th>
+                                <th>#. of Species</th>
+                                <th>#. of Boxes</th>
+                                <th>
+                                    #. of Captions (Refined / Positive /
+                                    Negative)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>14,647</td>
+                                <td>478</td>
+                                <td>42,217</td>
+                                <td>12,873 / 9,948 / 12,431</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="caption">
+                    Table 1. Summary statistics of the
+                    <span class="toolname">ORCA</span> dataset. Captions are
+                    categorized as <i>Refined</i> (expert-refined),
+                    <i>Positive</i> (correct VLM-generated), or
+                    <i>Negative</i> (incorrect VLM-generated).
+                </div>
+
+                <figure>
+                    <img
+                        src="static/images/butterfly_chart.svg"
+                        alt="Orca comparison chart"
+                        style="width: 100%; height: auto"
+                    />
+                    <figcaption>
+                        Figure 2. <span class="toolname">ORCA</span> offers a
+                        balance and sufficient amount of visual and textual
+                        annotations, compared to other
+                        <span class="general-dataset-color">general</span> and
+                        <span class="marine-dataset-color">marine</span>
+                        datasets.
+                    </figcaption>
+                </figure>
+
+                <div class="container">
+                    <div class="table-wrapper">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Dataset</th>
+                                    <th>Image Count</th>
+                                    <th>
+                                        Visual <br />
+                                        Annotation
+                                    </th>
+                                    <th>
+                                        Linguistic <br />
+                                        Annotation
+                                    </th>
+                                    <th>
+                                        Category <br />
+                                        Count
+                                    </th>
+                                    <th>
+                                        Taxonomy <br />
+                                        Supported
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Marine Domain Datasets -->
+                                <tr class="performance-table-group">
+                                    <td colspan="6">
+                                        <em class="marine-dataset-color"
+                                            >Marine Domain Datasets</em
+                                        >
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="marine-dataset-color"
+                                            >DUO</span
+                                        >
+                                    </td>
+                                    <td>7,782</td>
+                                    <td>BBOX</td>
+                                    <td>-</td>
+                                    <td>4</td>
+                                    <td>
+                                        <i
+                                            class="fas fa-times"
+                                            style="color: #b22222"
+                                        ></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="marine-dataset-color"
+                                            >SUIM</span
+                                        >
+                                    </td>
+                                    <td>1,525</td>
+                                    <td>Mask</td>
+                                    <td>-</td>
+                                    <td>8</td>
+                                    <td>
+                                        <i
+                                            class="fas fa-times"
+                                            style="color: #b22222"
+                                        ></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="marine-dataset-color"
+                                            >MAS3K</span
+                                        >
+                                    </td>
+                                    <td>3,103</td>
+                                    <td>Mask</td>
+                                    <td>-</td>
+                                    <td>37</td>
+                                    <td>
+                                        <i
+                                            class="fas fa-times"
+                                            style="color: #b22222"
+                                        ></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="marine-dataset-color"
+                                            >UIIS</span
+                                        >
+                                    </td>
+                                    <td>4,628</td>
+                                    <td>Mask</td>
+                                    <td>-</td>
+                                    <td>7</td>
+                                    <td>
+                                        <i
+                                            class="fas fa-times"
+                                            style="color: #b22222"
+                                        ></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="marine-dataset-color"
+                                            >SEAMPD21</span
+                                        >
+                                    </td>
+                                    <td>28,328</td>
+                                    <td>BBOX</td>
+                                    <td>-</td>
+                                    <td>130</td>
+                                    <td>
+                                        <i
+                                            class="fas fa-times"
+                                            style="color: #b22222"
+                                        ></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="marine-dataset-color"
+                                            >Wildfish</span
+                                        >
+                                    </td>
+                                    <td>54,459</td>
+                                    <td>Category</td>
+                                    <td>-</td>
+                                    <td>1,000</td>
+                                    <td>
+                                        <i
+                                            class="fas fa-times"
+                                            style="color: #b22222"
+                                        ></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="marine-dataset-color"
+                                            >FishNet</span
+                                        >
+                                    </td>
+                                    <td>94,532</td>
+                                    <td>BBOX</td>
+                                    <td>-</td>
+                                    <td>17,357</td>
+                                    <td>
+                                        <i
+                                            class="fas fa-check"
+                                            style="color: #228b22"
+                                        ></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="marine-dataset-color"
+                                            >Wildfish++</span
+                                        >
+                                    </td>
+                                    <td>2,348</td>
+                                    <td>Category</td>
+                                    <td>Image-Level</td>
+                                    <td>2,348</td>
+                                    <td>
+                                        <i
+                                            class="fas fa-check"
+                                            style="color: #228b22"
+                                        ></i>
+                                    </td>
+                                </tr>
+
+                                <!-- General-purpose Datasets -->
+                                <tr class="performance-table-group">
+                                    <td colspan="6">
+                                        <em class="general-dataset-color"
+                                            >General-purpose Datasets</em
+                                        >
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="general-dataset-color"
+                                            >Redcaps</span
+                                        >
+                                    </td>
+                                    <td>12,011,121</td>
+                                    <td>-</td>
+                                    <td>Image-Level</td>
+                                    <td>-</td>
+                                    <td>
+                                        <i
+                                            class="fas fa-times"
+                                            style="color: #b22222"
+                                        ></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="general-dataset-color"
+                                            >Pascal Sentences</span
+                                        >
+                                    </td>
+                                    <td>1,000</td>
+                                    <td>Category</td>
+                                    <td>Image-Level</td>
+                                    <td>20</td>
+                                    <td>
+                                        <i
+                                            class="fas fa-times"
+                                            style="color: #b22222"
+                                        ></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="general-dataset-color"
+                                            >SBU Captions</span
+                                        >
+                                    </td>
+                                    <td>1,000,000</td>
+                                    <td>-</td>
+                                    <td>Image-Level</td>
+                                    <td>-</td>
+                                    <td>
+                                        <i
+                                            class="fas fa-times"
+                                            style="color: #b22222"
+                                        ></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="general-dataset-color"
+                                            >iNat2017</span
+                                        >
+                                    </td>
+                                    <td>859,000</td>
+                                    <td>BBOX</td>
+                                    <td>-</td>
+                                    <td>5,089</td>
+                                    <td>
+                                        <i
+                                            class="fas fa-check"
+                                            style="color: #228b22"
+                                        ></i>
+                                    </td>
+                                </tr>
+
+                                <!-- Ours -->
+                                <tr class="performance-table-group">
+                                    <td colspan="6">
+                                        <em class="marine-dataset-color"
+                                            >Ours</em
+                                        >
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong
+                                            ><span class="marine-dataset-color"
+                                                >ORCA (Ours)</span
+                                            ></strong
+                                        >
+                                    </td>
+                                    <td>14,645</td>
+                                    <td>BBOX</td>
+                                    <td><strong>Instance-Level</strong></td>
+                                    <td>670</td>
+                                    <td>
+                                        <i
+                                            class="fas fa-check"
+                                            style="color: #228b22"
+                                        ></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="caption">
+                        Table 2. Statistic comparison of
+                        <span class="toolname">ORCA</span> with other general
+                        and domain-specific datasets. Notably,
+                        <span class="toolname">ORCA</span> provides a
+                        comprehensive marine domain dataset with detailed
+                        instance-level annotations.
+                    </div>
+                </div>
+
+                <figure>
+                    <img
+                        src="static/images/caption_length.svg"
+                        alt="Orca caption chart"
+                        style="width: 100%; height: auto"
+                    />
+                    <figcaption>
+                        Figure 3. Caption tokens length comparison between
+                        <span class="general-dataset-color">general</span> and
+                        <span class="marine-dataset-color">marine</span>
+                        datasets. <span class="toolname">ORCA</span> features
+                        longer and dense caption annotations, compared to
+                        others.
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <h2>Citation</h2>
+                <div class="code-container">
+                    <button class="copy-btn" id="copyButton">Copy</button>
+                    <pre>
+                        <code id="bibtexBlock">
+@misc{wong2025orcaobjectrecognitioncomprehension,
+      title={ORCA: Object Recognition and Comprehension for Archiving Marine Species}, 
+      author={Yuk-Kwan Wong and Haixin Liang and Zeyu Ma and Yiwei Chen and Ziqiang Zheng and Rinaldi Gotama and Pascal Sebastian and Lauren D. Sparks and Sai-Kit Yeung},
+      year={2025},
+      eprint={2512.21150},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2512.21150}, 
+}
+                        </code>
+                    </pre>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            This page has been viewed <span id="clickCount">0</span> times.
+        </footer>
+    </body>
+
+    <script src="static/js/citation.js"></script>
+    <script src="static/js/pageCount.js"></script>
 </html>
