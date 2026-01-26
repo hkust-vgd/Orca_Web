@@ -649,43 +649,6 @@ footer {
         max-width: 400px; /* optional — keeps buttons from being too wide on large phones */
         text-align: center;
     }
-
-    .summary-table thead th,
-    .performance-table thead th {
-        position: sticky;
-        top: 0;
-        z-index: 2;
-        backdrop-filter: blur(4px);
-    }
-
-    /* Slightly smaller font sizes to fit better */
-    .summary-table th,
-    .summary-table td,
-    .performance-table th,
-    .performance-table td {
-        font-size: 1rem;
-        padding: 0.6rem 0.4rem;
-        white-space: nowrap; /* prevent awkward wrapping */
-    }
-
-    /* Greatly improve horizontal scroll usability */
-    .table-wrapper::-webkit-scrollbar {
-        height: 8px;
-    }
-
-    .table-wrapper::-webkit-scrollbar-thumb {
-        background: rgba(15, 61, 115, 0.4);
-        border-radius: 10px;
-    }
-
-    .table-wrapper::-webkit-scrollbar-thumb:hover {
-        background: rgba(15, 61, 115, 0.6);
-    }
-
-    /* Reduce outer padding on small screens */
-    .container {
-        padding: 1rem;
-    }
 }
 
 /* 3️⃣ Extra small devices — prioritize vertical spacing, hide some minor text decorations */
@@ -739,18 +702,5 @@ footer {
     .link-button {
         width: 100%;
         max-width: 350px;
-    }
-
-    .summary-table th,
-    .summary-table td,
-    .performance-table th,
-    .performance-table td {
-        font-size: 0.9rem;
-        padding: 0.5rem 0.3rem;
-    }
-
-    .summary-table,
-    .performance-table {
-        min-width: 500px; /* narrower scroll zone for small screens */
     }
 }
